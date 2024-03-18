@@ -13,14 +13,14 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@symfony/webpack-encore": "^4.5.0",
+    "@symfony/webpack-encore": "^4.6.1",
     "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.18",
     "file-loader": "^6.2.0",
     "lodash": "^4.17.21",
-    "postcss": "^8.4.31",
-    "postcss-loader": "^7.3.3",
-    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.35",
+    "postcss-loader": "^8.1.1",
+    "tailwindcss": "^3.4.1",
     "tailwindcss-skip-link": "^1.0.1"
   },
   "devDependencies": {
