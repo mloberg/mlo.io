@@ -1,4 +1,6 @@
 {{ define "main" }}
+  {{ partial "sections.html" . }}
+
   {{ .Content }}
 
   {{ partial "list-by-date.html" .Paginator.Pages }}

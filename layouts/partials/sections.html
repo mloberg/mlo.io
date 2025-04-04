@@ -1,0 +1,11 @@
+<div class="md:flex">
+  {{ range .Site.Sections }}
+    <h2
+      class="{{ if or ($.InSection .) (and $.IsHome (eq .Title "Posts")) }}
+        underline
+      {{ end }} mr-4 text-base font-bold text-gray-700 dark:text-gray-300"
+    >
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    </h2>
+  {{ end }}
+</div>
