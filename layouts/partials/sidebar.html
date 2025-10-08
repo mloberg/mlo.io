@@ -10,7 +10,7 @@
   {{ with $i := resources.Get "images/profile.jpg" }}
     {{ with $i.Resize "150x Lanczos webp" }}
       <img
-        class="mb-2 ml-auto mr-auto rounded-full"
+        class="mr-auto mb-2 ml-auto rounded-full"
         height="{{ .Width }}"
         width="{{ .Height }}"
         src="{{ .RelPermalink }}"
