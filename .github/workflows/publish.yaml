@@ -32,7 +32,7 @@ jobs:
         if: github.event_name == 'pull_request'
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.141.0'
+          hugo-version: '0.151.0'
           extended: true
       - run: hugo build --gc --minify ${{ steps.config.outputs.hugo }}
       - uses: actions/upload-artifact@v4
@@ -43,6 +43,7 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           directory: ./public
+          check_css: false
           swap_urls: |
             {"^https:\\/\\/mlo\\.io\\/": "/", "^https:\\/\\/.*\\.pages\\.dev\\/": "/"}
     outputs:

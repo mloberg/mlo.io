@@ -40,7 +40,8 @@ proof: prod ## Run html-proofer against our prod build
 		-v $(PWD)/public:/public \
 		-e INPUT_DIRECTORY=public \
 		-e INPUT_SWAP_URLS='{"^https:\\/\\/mlo\\.io\\/": "/"}' \
-		anishathalye/proof-html:2.1.4
+		-e INPUT_CHECK_CSS='false' \
+		anishathalye/proof-html:2.2.2
 .PHONY: proof
 
 draft: ## Create a new draft
