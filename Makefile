@@ -58,9 +58,22 @@ hero: ## Create a hero image (IMAGE=path/to/image NAME=optional-name)
 	magick "$(IPATH)" -resize 992 "static/images/hero/$(NAME)-md.webp"
 	magick "$(IPATH)" -resize 768 "static/images/hero/$(NAME)-sm.webp"
 	magick "$(IPATH)" -resize 576 "static/images/hero/$(NAME).webp"
-	@awk "/additional hero images here/{print \"      '$(NAME)',\"}1" tailwind.config.js > tailwind.config.js.new
-	@mv tailwind.config.js.new tailwind.config.js
-	@echo "Created hero $(NAME)"
+	@echo "Created hero $(NAME)! To finish add the following lines to assets/css/main.css:"
+	@echo ".hero-$(NAME) {"
+	@echo "  background-image: url('/images/hero/$(NAME).webp');"
+	@echo "  @variant sm {"
+	@echo "    background-image: url('/images/hero/$(NAME)-sm.webp');"
+	@echo "  }"
+	@echo "  @variant md {"
+	@echo "    background-image: url('/images/hero/$(NAME)-md.webp');"
+	@echo "  }"
+	@echo "  @variant lg {"
+	@echo "    background-image: url('/images/hero/$(NAME)-lg.webp');"
+	@echo "  }"
+	@echo "  @variant xl {"
+	@echo "    background-image: url('/images/hero/$(NAME)-xl.webp');"
+	@echo "  }"
+	@echo "}"
 else
 hero:
 	@echo "usage: make hero IMAGE=path/to/image NAME=optional-name" >&2
