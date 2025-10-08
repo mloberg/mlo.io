@@ -20,10 +20,10 @@ jobs:
             echo "hugo=--baseURL \"https://${name}.mloberg.pages.dev\"" >> "$GITHUB_OUTPUT"
             echo "wrangler=--branch=${name}" >> "$GITHUB_OUTPUT"
           fi
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # for .GitInfo and .Lastmod
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version-file: package.json
           cache: npm
@@ -54,7 +54,7 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: site
           path: public
