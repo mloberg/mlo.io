@@ -1,5 +1,5 @@
 {{ range .GroupByDate "2006" }}
-  <h3 class="mb-4 mt-8 text-3xl">
+  <h3 class="mt-8 mb-4 text-3xl">
     {{ if eq .Key "0001" }}Other{{ else }}{{ .Key }}{{ end }}
   </h3>
   {{ range .Pages }}
